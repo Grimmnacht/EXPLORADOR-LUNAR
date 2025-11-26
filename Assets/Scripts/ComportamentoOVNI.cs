@@ -2,120 +2,94 @@ using UnityEngine;
 
 public class ComportamentoOVNI : MonoBehaviour
 {
-    // Configs de Órbita
-    public Transform centrodaLua;
-    public float velocidadeOrbita = 10f;
-    public float alturadaOrbita = 1100.0f;
+    [Header("Configurações")]
+    public Transform centroDaLua;
+    public float velocidadeOrbita = 30.0f;
+    public float velocidadeGiroProprio = 100.0f;
 
-    // AFD OVNI
-
-    public float tempoMinimoEstado = 4.0f;
+    [Header("IA")]
+    public float tempoMinimoEstado = 5.0f;
     public float tempoMaximoEstado = 10.0f;
 
-    private enum EstadoOVNI
-    {
-        PARADO,
-        ORBITANDO_DIREITA,
-        ORBITANDO_ESQUERDA,
-        MOVENDO_RETO
-    }
-
+    // Estados
+    private enum EstadoOVNI { PARADO, ORBITA_HORIZONTAL, ORBITA_POLAR, ORBITA_DIAGONAL }
     private EstadoOVNI estadoAtual;
-
-    private float temporizadorDoEstado;
-    private Vector3 direcaoMovimentoReto;
+    private float temporizador;
+    
+    
+    private Vector3 eixoOrbitaAtual;
 
     void Start()
     {
-       if (centrodaLua == null)
-        {
-            centrodaLua = GameObject.Find("Lua").transform;
-        }
+        if (centroDaLua == null) centroDaLua = GameObject.Find("Lua").transform;
+        
+        
+        transform.rotation = Quaternion.identity;
+        
+        transform.up = (transform.position - centroDaLua.position).normalized;
 
-        EscolherProximoEstado();
-
+        EscolherNovoEstado();
     }
 
     void Update()
     {
-        
-        temporizadorDoEstado -= Time.deltaTime;
+        temporizador -= Time.deltaTime;
+        if (temporizador <= 0) EscolherNovoEstado();
 
-        if (temporizadorDoEstado <= 0)
-        {
-            EscolherProximoEstado();
-        }
-
-        ExecutarEstadoAtual();
-
-    } 
-
-    void ExecutarEstadoAtual ()
-    {
-        
-        switch (estadoAtual)
-        {
-            case EstadoOVNI.PARADO:
-                break;
-
-            case EstadoOVNI.ORBITANDO_DIREITA:
-                transform.RotateAround(centrodaLua.position, Vector3.up, velocidadeOrbita * Time.deltaTime);
-                break;
-
-            case EstadoOVNI.ORBITANDO_ESQUERDA:
-                transform.RotateAround(centrodaLua.position, Vector3.up, -velocidadeOrbita * Time.deltaTime);
-                break;
-
-            case EstadoOVNI.MOVENDO_RETO:
-                transform.Translate(direcaoMovimentoReto * velocidadeOrbita * Time.deltaTime, Space.World);
-                ManterAltitude();
-                break;
-        }
-
-
+        ExecutarMovimento();
     }
 
-    void EscolherProximoEstado ()
+    void ExecutarMovimento()
     {
-       int indexEstado = Random.Range(0,4);
+       
+        transform.Rotate(Vector3.up, velocidadeGiroProprio * Time.deltaTime, Space.Self);
 
-       if (indexEstado == 0)
+        
+        if (estadoAtual != EstadoOVNI.PARADO)
+        {
+          
+            transform.RotateAround(centroDaLua.position, eixoOrbitaAtual, velocidadeOrbita * Time.deltaTime);
+        }
+        
+       
+        Vector3 direcaoGravidade = (transform.position - centroDaLua.position).normalized;
+        
+        
+        Quaternion rotacaoAlvo = Quaternion.FromToRotation(transform.up, direcaoGravidade) * transform.rotation;
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotacaoAlvo, Time.deltaTime * 5.0f);
+    }
+
+    void EscolherNovoEstado()
+    {
+        int sorteio = Random.Range(0, 100);
+
+        if (sorteio < 10) 
         {
             estadoAtual = EstadoOVNI.PARADO;
         }
-       else if (indexEstado == 1)
+        else
         {
-            estadoAtual = EstadoOVNI.ORBITANDO_DIREITA;
-        }
-       else if (indexEstado == 2)
-        {
-            estadoAtual = EstadoOVNI.ORBITANDO_ESQUERDA;
-        }
-       else 
-        {
-            estadoAtual = EstadoOVNI.MOVENDO_RETO;
-            direcaoMovimentoReto = Random.onUnitSphere;
-            direcaoMovimentoReto.y = 0;
-            direcaoMovimentoReto.Normalize();
+           
+            int tipoOrbita = Random.Range(0, 3);
+            
+            if (tipoOrbita == 0) 
+            {
+                estadoAtual = EstadoOVNI.ORBITA_HORIZONTAL;
+                eixoOrbitaAtual = Vector3.up; 
+            }
+            else if (tipoOrbita == 1) 
+            {
+                estadoAtual = EstadoOVNI.ORBITA_POLAR;
+                eixoOrbitaAtual = Vector3.right; 
+            }
+            else 
+            {
+                estadoAtual = EstadoOVNI.ORBITA_DIAGONAL;
+                
+                eixoOrbitaAtual = Random.onUnitSphere; 
+            }
         }
 
-         temporizadorDoEstado = Random.Range(tempoMinimoEstado, tempoMaximoEstado);
-
+        temporizador = Random.Range(tempoMinimoEstado, tempoMaximoEstado);
     }
-
-    void ManterAltitude ()
-    {
-        Vector3 pos = transform.position;
-        pos.y = Mathf.Lerp(pos.y, alturadaOrbita, Time.deltaTime * 0.5f);
-        Vector3 direcaoDoCentro = (pos - centrodaLua.position).normalized;
-        direcaoDoCentro.y = 0;
-        float raio = new Vector2(pos.x, pos.z).magnitude;
-        float raioDesejado =new Vector2(alturadaOrbita, 0).magnitude;
-
-        Vector3 posDesejada = direcaoDoCentro * raioDesejado;
-        pos.x = Mathf.Lerp(pos.x, posDesejada.x, Time.deltaTime * 0.5f);
-        pos.z = Mathf.Lerp(pos.z, posDesejada.z, Time.deltaTime * 0.5f);
-        transform.position = pos;
-    }
-
 }
