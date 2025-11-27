@@ -1,11 +1,15 @@
 using UnityEngine;
-using UnityEngine.InputSystem; 
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody))]
 public class ControleMovimento : MonoBehaviour
 {
-    public float velocidadeCaminhada = 5.0f;
+    [Header("Configurações")]
+    public float velocidadeCaminhada = 8.0f; 
     public float forcaPulo = 3.0f; 
+
+    [Header("Referências")]
+    public Transform cameraVR; 
 
     private Rigidbody rb;
     private Vector2 inputMovimento; 
@@ -14,15 +18,18 @@ public class ControleMovimento : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        
+        if (cameraVR == null)
+        {
+            cameraVR = Camera.main.transform;
+        }
     }
     
-    // Esta função é chamada pelo PlayerInput (Move)
     public void OnMove(InputValue value)
     {
         inputMovimento = value.Get<Vector2>();
     }
 
-    // Esta função é chamada pelo PlayerInput (Jump)
     public void OnJump(InputValue value)
     {
         if (value.isPressed && estaNoChao)
@@ -33,9 +40,20 @@ public class ControleMovimento : MonoBehaviour
     
     void FixedUpdate()
     {
-        Vector3 direcaoMovimento = new Vector3(inputMovimento.x, 0, inputMovimento.y).normalized;
-        Vector3 movimentoRelativo = transform.TransformDirection(direcaoMovimento);
-        Vector3 velocidadeAlvo = movimentoRelativo * velocidadeCaminhada;
+        Vector3 frenteDaCamera = cameraVR.forward;
+        Vector3 ladoDaCamera = cameraVR.right;
+
+       
+        frenteDaCamera.y = 0;
+        ladoDaCamera.y = 0;
+ 
+        frenteDaCamera.Normalize();
+        ladoDaCamera.Normalize();
+
+       
+        Vector3 direcaoDesejada = (frenteDaCamera * inputMovimento.y + ladoDaCamera * inputMovimento.x).normalized;
+
+        Vector3 velocidadeAlvo = direcaoDesejada * velocidadeCaminhada;
         velocidadeAlvo.y = rb.linearVelocity.y; 
         
         Vector3 forca = (velocidadeAlvo - rb.linearVelocity);

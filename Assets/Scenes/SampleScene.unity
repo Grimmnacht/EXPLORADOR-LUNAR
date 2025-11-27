@@ -1510,8 +1510,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d69dcd405f654c04cb753b9b699a175a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ControleMovimento
-  velocidadeCaminhada: 8
+  velocidadeCaminhada: 15
   forcaPulo: 3
+  cameraVR: {fileID: 1556856549}
 --- !u!114 &961299438
 MonoBehaviour:
   m_ObjectHideFlags: 0
