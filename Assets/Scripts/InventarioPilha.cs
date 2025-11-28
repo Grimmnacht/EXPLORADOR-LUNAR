@@ -65,7 +65,6 @@ public class InventarioPilha : MonoBehaviour
         if (textoInventario != null) 
             textoInventario.text = "MISSÃO CUMPRIDA!\nRETORNANDO À TERRA...";
             
-        // --- CÓDIGO ATUALIZADO (SEM AVISO AMARELO) ---
         FindFirstObjectByType<GerenciadorCutscene>().IniciarSequenciaFinal();
     }
     void AtualizarUI()

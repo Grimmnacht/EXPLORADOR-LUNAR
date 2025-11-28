@@ -16,14 +16,14 @@ O objetivo é proporcionar uma imersão na superfície lunar utilizando o Google
 ### 🧠 Aplicação de Teoria da Computação
 O projeto integra conceitos teóricos na lógica do gameplay:
 1.  **Autômato de Pilha (AP):** Implementado no sistema de inventário. Os minérios são "empilhados" (PUSH) na mochila e "desempilhados" (POP) ao serem entregues no foguete.
-2.  **Autômato Finito Determinístico (AFD):** Controle das portas da base lunar (Estados: Trancada, Fechada, Aberta) e sistema de vida/oxigênio.
+2.  **Autômato Finito Determinístico (AFD):** Controle das portas da base lunar (Estados: Trancada, Fechada, Aberta) e movimentação.
 3.  **Autômato Finito Não-Determinístico (AFN):** Comportamento aleatório do OVNI que orbita o cenário, alternando entre estados de órbita e movimento livre.
 4.  **Eventos de Região:** Gatilhos invisíveis que disparam eventos (como a passagem de um asteroide) baseados na posição do jogador.
 
 ## 🛠️ Tecnologias Utilizadas
-- **Engine:** Unity 2022/2023 (URP)
+- **Engine:** Unity 6.2 (URP)
 - **Linguagem:** C#
-- **Plugins:** Google Cardboard XR Plugin, Input System (New).
+- **Plugins:** Google Cardboard XR Plugin.
 - **Controle:** Gamepad Bluetooth (Xbox/Genérico).
 
 ## 📱 Requisitos Mínimos
