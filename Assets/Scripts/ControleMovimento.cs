@@ -8,6 +8,10 @@ public class ControleMovimento : MonoBehaviour
     public float velocidadeCaminhada = 8.0f; 
     public float forcaPulo = 3.0f; 
 
+    [Header("Ajuste de Pulo")]
+    [Range(0, 1)] 
+    public float controleNoAr = 0.1f; 
+
     [Header("Referências")]
     public Transform cameraVR; 
 
@@ -18,11 +22,7 @@ public class ControleMovimento : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        
-        if (cameraVR == null)
-        {
-            cameraVR = Camera.main.transform;
-        }
+        if (cameraVR == null) cameraVR = Camera.main.transform;
     }
     
     public void OnMove(InputValue value)
@@ -40,26 +40,31 @@ public class ControleMovimento : MonoBehaviour
     
     void FixedUpdate()
     {
+    
         Vector3 frenteDaCamera = cameraVR.forward;
         Vector3 ladoDaCamera = cameraVR.right;
-
-       
         frenteDaCamera.y = 0;
         ladoDaCamera.y = 0;
- 
         frenteDaCamera.Normalize();
         ladoDaCamera.Normalize();
 
-       
         Vector3 direcaoDesejada = (frenteDaCamera * inputMovimento.y + ladoDaCamera * inputMovimento.x).normalized;
 
         Vector3 velocidadeAlvo = direcaoDesejada * velocidadeCaminhada;
         velocidadeAlvo.y = rb.linearVelocity.y; 
-        
+
         Vector3 forca = (velocidadeAlvo - rb.linearVelocity);
+  
         forca.x = Mathf.Clamp(forca.x, -50f, 50f);
         forca.z = Mathf.Clamp(forca.z, -50f, 50f);
         forca.y = 0; 
+
+        if (!estaNoChao)
+        {
+            forca.x *= controleNoAr;
+            forca.z *= controleNoAr;
+        }
+
         
         rb.AddForce(forca, ForceMode.VelocityChange);
     }

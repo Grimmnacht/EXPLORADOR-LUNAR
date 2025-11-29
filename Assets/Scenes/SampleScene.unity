@@ -1362,6 +1362,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GravidadeLunar
   centroDaLua: {fileID: 2065278656}
   forcaGravidade: 1.62
+  multiplicadorQueda: 2.5
 --- !u!54 &961299431
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1512,6 +1513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ControleMovimento
   velocidadeCaminhada: 15
   forcaPulo: 3
+  controleNoAr: 0.1
   cameraVR: {fileID: 1556856549}
 --- !u!114 &961299438
 MonoBehaviour:
@@ -2324,7 +2326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ComportamentoOVNI
   centroDaLua: {fileID: 2065278656}
-  velocidadeOrbita: 30
+  velocidadeOrbita: 25
   velocidadeGiroProprio: 100
   tempoMinimoEstado: 5
   tempoMaximoEstado: 10
@@ -3667,6 +3669,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Min\xE9rio"
       objectReference: {fileID: 0}
+    - target: {fileID: 6326356507551232614, guid: a28801e592a7ae2418c2364db371a83e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f0e0e49caf0ce67438fff49bbb30886a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

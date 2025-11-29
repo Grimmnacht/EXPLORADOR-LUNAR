@@ -3,7 +3,10 @@ using UnityEngine;
 public class GravidadeLunar : MonoBehaviour
 {
     public Transform centroDaLua;
-    public float forcaGravidade = 1.62f;
+
+    [Header("Ajustes de Física")]
+    public float forcaGravidade = 1.62f; 
+    public float multiplicadorQueda = 2.5f; 
 
     private Rigidbody rb;
 
@@ -11,23 +14,26 @@ public class GravidadeLunar : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.useGravity = false;
-        
         rb.constraints = RigidbodyConstraints.FreezeRotation;
     }
 
     void FixedUpdate()
     {
-        // 1. CALCULAR A DIREÇÃO DA GRAVIDADE 
-        Vector3 direcaoGravidade = (centroDaLua.position - transform.position).normalized;
+        if (centroDaLua == null) return;
 
-        // 2. APLICAR A FORÇA DA GRAVIDADE
-        rb.AddForce(direcaoGravidade * forcaGravidade, ForceMode.Acceleration);
+        Vector3 direcaoParaBaixo = (centroDaLua.position - transform.position).normalized;
+        Vector3 vetorGravidadeFinal = direcaoParaBaixo * forcaGravidade;
+ 
+        if (Vector3.Dot(rb.linearVelocity, direcaoParaBaixo) > 0)
+        {
+  
+            vetorGravidadeFinal *= multiplicadorQueda;
+        }
 
-        // 3. ORIENTAR O ASTRONAUTA 
-        Vector3 direcaoParaCima = -direcaoGravidade;
+    
+        rb.AddForce(vetorGravidadeFinal, ForceMode.Acceleration);
 
-        Quaternion rotacaoDesejada = Quaternion.FromToRotation(transform.up, direcaoParaCima) * transform.rotation;
-        
-        rb.MoveRotation(Quaternion.Slerp(transform.rotation, rotacaoDesejada, Time.fixedDeltaTime * 8.0f));
+        Quaternion rotacaoDesejada = Quaternion.FromToRotation(transform.up, -direcaoParaBaixo) * transform.rotation;
+        rb.MoveRotation(Quaternion.Slerp(transform.rotation, rotacaoDesejada, Time.fixedDeltaTime * 10.0f));
     }
 }

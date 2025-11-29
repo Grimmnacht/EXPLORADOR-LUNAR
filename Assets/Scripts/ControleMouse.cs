@@ -16,18 +16,15 @@ public class ControleMouse : MonoBehaviour
 
     void Update()
     {
-        // 1. Lendo o movimento do mouse
+    
         float mouseX = Input.GetAxis("Mouse X") * sensibilidadeMouse;
         float mouseY = Input.GetAxis("Mouse Y") * sensibilidadeMouse;
 
-        // 2. Rotação Horizontal 
         transform.Rotate(Vector3.up * mouseX);
 
-        // 3. Rotação Vertical 
         rotacaoVertical -= mouseY;
         rotacaoVertical = Mathf.Clamp(rotacaoVertical, -90f, 90f);
 
-        // Aplicamos essa rotação apenas à *cabeça* (a Câmera)
         cabecaCamera.localRotation = Quaternion.Euler(rotacaoVertical, 0, 0);
     }
 }
