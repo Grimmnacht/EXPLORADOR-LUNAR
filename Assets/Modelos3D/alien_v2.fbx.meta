@@ -22,7 +22,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -82,8 +82,303 @@ ModelImporter:
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
-    human: []
-    skeleton: []
+    human:
+    - boneName: Cilindro.018
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cilindro.017
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Esfera UV
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cilindro.012
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Cilindro.002
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: alien_v2(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cilindro.001
+      parentName: alien_v2(Clone)
+      position: {x: 2.291247, y: 2.747498, z: 1.8733145}
+      rotation: {x: 0.721756, y: 0.28480268, z: 0.22153413, w: 0.59065926}
+      scale: {x: 5.8026123, y: 6.6084523, z: 68.594986}
+    - name: Cilindro.002
+      parentName: alien_v2(Clone)
+      position: {x: 1.988102, y: 2.2500882, z: 2.573564}
+      rotation: {x: 0.6430699, y: 0.29547, z: 0.018549751, w: 0.70626795}
+      scale: {x: 9.208537, y: 12.167683, z: 48.946777}
+    - name: Cilindro.003
+      parentName: alien_v2(Clone)
+      position: {x: 0.868072, y: 4.132238, z: 2.1637757}
+      rotation: {x: 0.4183236, y: 0.57009244, z: 0.5700923, w: 0.41832358}
+      scale: {x: 73.01807, y: 73.01807, z: 1.9119546}
+    - name: Cilindro.004
+      parentName: alien_v2(Clone)
+      position: {x: 2.5179744, y: 2.3466377, z: 2.7337623}
+      rotation: {x: 0.29402646, y: -0.40776166, z: 0.8360954, w: -0.2195982}
+      scale: {x: -5.802612, y: -6.6084523, z: -68.59499}
+    - name: Cilindro.005
+      parentName: alien_v2(Clone)
+      position: {x: 3.3482294, y: 1.6213136, z: 2.7337623}
+      rotation: {x: -0.4077616, y: -0.29402652, z: 0.21959822, w: 0.83609545}
+      scale: {x: 5.802612, y: 6.608453, z: 68.59499}
+    - name: Cilindro.007
+      parentName: alien_v2(Clone)
+      position: {x: 0.86869645, y: 4.1343417, z: 2.693695}
+      rotation: {x: 0.57009244, y: -0.41832367, z: -0.41832364, w: 0.5700923}
+      scale: {x: -73.01807, y: -73.01807, z: -1.9119546}
+    - name: Cilindro.011
+      parentName: alien_v2(Clone)
+      position: {x: 2.1363134, y: 1.3789746, z: 2.645797}
+      rotation: {x: 0.6116597, y: 0.07465306, z: -0.30174428, w: 0.7274955}
+      scale: {x: 9.208536, y: 12.167683, z: 48.94678}
+    - name: Cilindro.012
+      parentName: alien_v2(Clone)
+      position: {x: 1.9695019, y: 2.280058, z: 2.1488116}
+      rotation: {x: -0.29547, y: 0.6430698, z: 0.7062681, w: -0.018549785}
+      scale: {x: -9.208536, y: -12.167683, z: -48.94678}
+    - name: Cilindro.013
+      parentName: alien_v2(Clone)
+      position: {x: 2.0040255, y: 1.4441241, z: 2.0652735}
+      rotation: {x: -0.022968963, y: 0.61577034, z: 0.69955385, w: 0.36183387}
+      scale: {x: -9.208537, y: -12.167683, z: -48.946777}
+    - name: Cilindro.017
+      parentName: alien_v2(Clone)
+      position: {x: 2.3302019, y: 1.8739636, z: 1.4422696}
+      rotation: {x: 0.8360954, y: -0.21959816, z: -0.2940265, w: 0.40776166}
+      scale: {x: 5.802612, y: 6.608453, z: 68.594986}
+    - name: Cilindro.018
+      parentName: alien_v2(Clone)
+      position: {x: 1.9248061, y: 1.9739734, z: 3.446083}
+      rotation: {x: -0.22153415, y: -0.59065926, z: 0.721756, w: 0.28480268}
+      scale: {x: -5.8026123, y: -6.6084523, z: -68.59499}
+    - name: Cilindro.019
+      parentName: alien_v2(Clone)
+      position: {x: 1.9637614, y: 2.847508, z: 3.015038}
+      rotation: {x: 0.29402646, y: -0.40776166, z: 0.8360954, w: -0.2195982}
+      scale: {x: -5.802612, y: -6.6084523, z: -68.59499}
+    - name: Cone
+      parentName: alien_v2(Clone)
+      position: {x: 1.5713658, y: 3.1614559, z: 2.9717965}
+      rotation: {x: 0.24483708, y: 0.18153498, z: -0.68272376, w: 0.6640694}
+      scale: {x: 5.822594, y: 37.136425, z: 37.136425}
+    - name: Cone.001
+      parentName: alien_v2(Clone)
+      position: {x: 1.5526587, y: 3.168789, z: 1.8843805}
+      rotation: {x: -0.18153498, y: 0.24483712, z: 0.6640695, w: 0.68272364}
+      scale: {x: -5.822594, y: -37.136425, z: -37.136425}
+    - name: Cone.002
+      parentName: alien_v2(Clone)
+      position: {x: 2.0711899, y: 3.2348354, z: 2.1990864}
+      rotation: {x: -0.58285946, y: -0.09452478, z: 0.44533443, w: 0.67306554}
+      scale: {x: -5.8225937, y: -37.136425, z: -37.136425}
+    - name: Cone.003
+      parentName: alien_v2(Clone)
+      position: {x: 2.08103, y: 3.2480452, z: 2.7268295}
+      rotation: {x: 0.79872245, y: 0.30791146, z: -0.18690172, w: -0.48197582}
+      scale: {x: -5.822594, y: -37.13642, z: -37.13642}
+    - name: Cone.004
+      parentName: alien_v2(Clone)
+      position: {x: 1.2322214, y: 3.145094, z: 2.4678996}
+      rotation: {x: 0.6260638, y: -0.28721294, z: -0.36619785, w: 0.62566125}
+      scale: {x: 5.822594, y: 37.13642, z: 37.13642}
+    - name: Cone.005
+      parentName: alien_v2(Clone)
+      position: {x: 1.697839, y: 3.3718593, z: 2.6745772}
+      rotation: {x: 0.6994495, y: 0.6224001, z: 0.3370694, w: 0.09885743}
+      scale: {x: -2.4829733, y: -15.83637, z: -15.83637}
+    - name: Cone.006
+      parentName: alien_v2(Clone)
+      position: {x: 1.4652004, y: 1.293413, z: 1.4085864}
+      rotation: {x: -0.35069588, y: -0.4330833, z: 0.6140135, w: 0.5589622}
+      scale: {x: 12.049446, y: 12.049447, z: 12.049447}
+    - name: Cone.007
+      parentName: alien_v2(Clone)
+      position: {x: 1.4889622, y: 1.3326457, z: 0.7829216}
+      rotation: {x: -0.38147646, y: 0.2945053, z: -0.59537864, w: 0.64285815}
+      scale: {x: -12.049446, y: -12.049445, z: -12.049446}
+    - name: Cone.008
+      parentName: alien_v2(Clone)
+      position: {x: 1.325164, y: 1.2770989, z: 1.1006331}
+      rotation: {x: -0.5295305, y: 0.45882592, z: -0.46861228, w: 0.5380323}
+      scale: {x: -12.049446, y: -12.049447, z: -12.049446}
+    - name: Cone.009
+      parentName: alien_v2(Clone)
+      position: {x: 1.084249, y: 1.4720478, z: 3.6905956}
+      rotation: {x: -0.35069588, y: -0.4330833, z: 0.6140135, w: 0.5589622}
+      scale: {x: 12.049446, y: 12.049447, z: 12.049447}
+    - name: Cone.010
+      parentName: alien_v2(Clone)
+      position: {x: 1.1407839, y: 1.5112807, z: 3.03767}
+      rotation: {x: -0.2775119, y: 0.18387383, z: -0.6503746, w: 0.6827814}
+      scale: {x: -12.049446, y: -12.049447, z: -12.049447}
+    - name: Cone.011
+      parentName: alien_v2(Clone)
+      position: {x: 1.0048287, y: 1.4557338, z: 3.382642}
+      rotation: {x: -0.5295305, y: 0.45882592, z: -0.46861228, w: 0.5380323}
+      scale: {x: -12.049446, y: -12.049447, z: -12.049446}
+    - name: Cone.012
+      parentName: alien_v2(Clone)
+      position: {x: 1.6306301, y: 3.5146532, z: 3.0153093}
+      rotation: {x: 0.8323074, y: -0.127929, z: -0.4369116, w: -0.31623858}
+      scale: {x: -5.822594, y: -37.13642, z: -37.136425}
+    - name: Cone.013
+      parentName: alien_v2(Clone)
+      position: {x: 1.5886565, y: 3.5438068, z: 1.8139311}
+      rotation: {x: 0.1279291, y: 0.8323073, z: -0.31623876, w: 0.43691164}
+      scale: {x: 5.822594, y: 37.13642, z: 37.13642}
+    - name: Cone.014
+      parentName: alien_v2(Clone)
+      position: {x: 1.6783901, y: 4.2750764, z: 2.8266704}
+      rotation: {x: -0.6484287, y: 0.16969405, z: 0.7017691, w: -0.24138004}
+      scale: {x: -5.822594, y: -37.13642, z: -37.136425}
+    - name: Cone.015
+      parentName: alien_v2(Clone)
+      position: {x: 1.5797622, y: 4.3557534, z: 2.037426}
+      rotation: {x: 0.169694, y: 0.64842874, z: 0.24138013, w: 0.7017691}
+      scale: {x: 5.822594, y: 37.136425, z: 37.136425}
+    - name: Cone.016
+      parentName: alien_v2(Clone)
+      position: {x: 4.3858094, y: 1.4838414, z: 2.189222}
+      rotation: {x: -0.6494953, y: 0.46644223, z: -0.27956358, w: 0.5314432}
+      scale: {x: 16.8064, y: 16.8064, z: 16.806398}
+    - name: Cone.017
+      parentName: alien_v2(Clone)
+      position: {x: 1.1359653, y: 1.0017132, z: 2.8162758}
+      rotation: {x: -0.33583605, y: -0.035637017, z: 0.70540816, w: 0.6231721}
+      scale: {x: 6.1136436, y: 6.1136436, z: 6.1136436}
+    - name: Cone.018
+      parentName: alien_v2(Clone)
+      position: {x: 1.1359653, y: 1.0017132, z: 2.6437678}
+      rotation: {x: -0.03563714, y: 0.3358359, z: -0.6231722, w: 0.7054081}
+      scale: {x: -6.1136436, y: -6.1136436, z: -6.1136436}
+    - name: Cone.019
+      parentName: alien_v2(Clone)
+      position: {x: 1.1359653, y: 1.0017132, z: 1.8813751}
+      rotation: {x: -0.07592804, y: 0.29964072, z: -0.64136165, w: 0.7022148}
+      scale: {x: -6.1136436, y: -6.1136436, z: -6.1136436}
+    - name: Cone.020
+      parentName: alien_v2(Clone)
+      position: {x: 1.1495727, y: 1.0017132, z: 2.0516806}
+      rotation: {x: -0.28029013, y: -0.09693322, z: 0.69962466, w: 0.65005136}
+      scale: {x: 6.1136436, y: 6.1136436, z: 6.1136436}
+    - name: Cubo
+      parentName: alien_v2(Clone)
+      position: {x: 1.6689001, y: 1.3160043, z: 1.3281602}
+      rotation: {x: -0.6922825, y: 0.13183996, z: 0.1440309, w: 0.6947074}
+      scale: {x: 10.755866, y: 10.755867, z: 10.755867}
+    - name: Cubo.001
+      parentName: alien_v2(Clone)
+      position: {x: 1.6792636, y: 1.3409936, z: 0.9092941}
+      rotation: {x: -0.19606878, y: -0.6758285, z: 0.6793799, w: -0.2079804}
+      scale: {x: -10.755867, y: -10.755867, z: -10.755867}
+    - name: Cubo.002
+      parentName: alien_v2(Clone)
+      position: {x: 1.5441657, y: 1.2996902, z: 1.1010054}
+      rotation: {x: -0.00026693218, y: -0.7069928, z: 0.7071067, w: -0.012696168}
+      scale: {x: -10.755867, y: -10.755866, z: -10.755868}
+    - name: Cubo.003
+      parentName: alien_v2(Clone)
+      position: {x: 1.2879486, y: 1.4946393, z: 3.6101694}
+      rotation: {x: -0.6922825, y: 0.13183996, z: 0.1440309, w: 0.6947074}
+      scale: {x: 10.755866, y: 10.755867, z: 10.755867}
+    - name: Cubo.004
+      parentName: alien_v2(Clone)
+      position: {x: 1.279001, y: 1.533872, z: 3.207546}
+      rotation: {x: -0.30337456, y: -0.6332892, z: 0.6387205, w: -0.3145549}
+      scale: {x: -10.755867, y: -10.755867, z: -10.755867}
+    - name: Cubo.005
+      parentName: alien_v2(Clone)
+      position: {x: 1.2238305, y: 1.4783251, z: 3.3830144}
+      rotation: {x: -0.00026693218, y: -0.7069928, z: 0.7071067, w: -0.012696168}
+      scale: {x: -10.755867, y: -10.755866, z: -10.755868}
+    - name: Esfera UV
+      parentName: alien_v2(Clone)
+      position: {x: 1.5173283, y: 3.9295743, z: 2.4096603}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 57.05596, y: 57.05596, z: 57.05596}
+    - name: Esfera UV.001
+      parentName: alien_v2(Clone)
+      position: {x: 1.7577024, y: 2.988749, z: 2.40381}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 42.40503, y: 42.40503, z: 42.40503}
+    - name: Esfera UV.002
+      parentName: alien_v2(Clone)
+      position: {x: 1.6684092, y: 0.9690005, z: 2.7302523}
+      rotation: {x: -0.70710677, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 60.440422, y: 14.767427, z: 14.767427}
+    - name: Esfera UV.003
+      parentName: alien_v2(Clone)
+      position: {x: 1.8624209, y: 1.30574, z: 1.1160529}
+      rotation: {x: -0.68697155, y: -0.14937697, z: 0.034821752, w: 0.71031266}
+      scale: {x: 31.517912, y: 31.51791, z: 31.51791}
+    - name: Esfera UV.004
+      parentName: alien_v2(Clone)
+      position: {x: 1.480088, y: 1.5098566, z: 3.4107258}
+      rotation: {x: -0.66030747, y: -0.044370513, z: 0.20550558, w: 0.72096664}
+      scale: {x: 31.51791, y: 31.517908, z: 31.51791}
+    - name: Esfera UV.005
+      parentName: alien_v2(Clone)
+      position: {x: 1.689297, y: 0.9782781, z: 1.9607836}
+      rotation: {x: -0.70710677, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 60.440422, y: 14.767427, z: 14.767427}
+    - name: Esfera UV.006
+      parentName: alien_v2(Clone)
+      position: {x: 1.0384954, y: 4.113476, z: 2.175243}
+      rotation: {x: -0.68697166, y: -0.14937699, z: 0.034821745, w: 0.7103126}
+      scale: {x: 12.708846, y: 12.708845, z: 12.708845}
+    - name: Esfera UV.007
+      parentName: alien_v2(Clone)
+      position: {x: 1.0596408, y: 4.1153283, z: 2.6341033}
+      rotation: {x: -0.68697166, y: -0.14937699, z: 0.034821745, w: 0.7103126}
+      scale: {x: 12.708846, y: 12.708845, z: 12.708845}
+    - name: Esfera UV.009
+      parentName: alien_v2(Clone)
+      position: {x: 3.9981976, y: 1.30574, z: 2.3027513}
+      rotation: {x: -0.68697155, y: -0.14937697, z: 0.034821752, w: 0.71031266}
+      scale: {x: 31.517912, y: 31.51791, z: 31.51791}
+    - name: Esfera UV.010
+      parentName: alien_v2(Clone)
+      position: {x: 0.91358036, y: 3.885347, z: 2.7239635}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.2030461, y: 1.2030461, z: 4.076056}
+    - name: Esfera UV.011
+      parentName: alien_v2(Clone)
+      position: {x: 0.99149823, y: 3.6130638, z: 2.5089076}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.2030461, y: 1.2030461, z: 4.076056}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -94,13 +389,13 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 2
+  animationType: 3
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
