@@ -71,4 +71,4 @@ Este projeto foi desenvolvido pela equipe:
 * **Vênica Ângelos de Melo**
 * **Mateus Oliveira de Almeida Rocha**
 * **Bernardo Alexandre Chaves**
-* **Eduardo Fernandes de Pinho Tavares*
+* **Eduardo Fernandes de Pinho Tavares**
