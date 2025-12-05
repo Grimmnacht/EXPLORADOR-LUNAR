@@ -1,6 +1,6 @@
 # 🌕 Projeto A3: Explorador Lunar VR
 
-Experiência interativa em Realidade Virtual (Mobile) desenvolvida na Unity para a disciplina de **Teoria da Computação** e **Computação Gráfica**.
+Experiência interativa em Realidade Virtual (Mobile) desenvolvida na Unity para a disciplina de **Teoria da Computação e Compiladores** e **Computação Gráfica e Realidade Virtual**.
 
 O projeto simula uma caminhada lunar com física personalizada, onde o jogador deve coletar recursos e interagir com uma base espacial, aplicando conceitos práticos de autômatos finitos e estruturas de dados.
 
@@ -62,3 +62,13 @@ O jogo utiliza um esquema de controle simples para evitar enjoo em VR:
 2.  Explore a cratera e encontre **5 Minérios Lunares**.
 3.  Retorne ao Foguete e entre na zona de carga para depositar os minérios.
 4.  Aguarde a confirmação de "Missão Cumprida" para ver a decolagem final.
+
+## 👥 Membros do Grupo
+
+Este projeto foi desenvolvido pela equipe:
+
+* **Liam Chaefer Neves**
+* **Vênica Ângelos de Melo**
+* **Mateus Oliveira de Almeida Rocha**
+* **Bernardo Alexandre Chaves**
+* **Eduardo Fernandes de Pinho Tavares*
