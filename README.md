@@ -24,7 +24,7 @@ O projeto integra conceitos teóricos na lógica do gameplay:
 - **Engine:** Unity 6.2 (URP)
 - **Linguagem:** C#
 - **Plugins:** Google Cardboard XR Plugin.
-- **Controle:** Gamepad Bluetooth (Xbox/Genérico).
+- **Controle:** Gamepad Bluetooth (Xbox/Playstation/Genérico).
 
 ## 📱 Requisitos Mínimos
 - **Android:** Versão 8.0 (Oreo) ou superior.
